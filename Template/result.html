@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="container">
+    <hr>
+    <div>
+      <img src="{{ result[2] }}" class="img-rounded" width="400" height="200">
+    </div>
+    <hr>      
+    <div>
+    <table>
+        <tr>
+            <th>Predicted Class</th>
+            <th>Predicted Prob</th>
+        </tr>
+        <tr>
+            <td>{{ result[0] }}</td>
+            <td>{{ result[1] * 100}}%</td>
+        </tr>
+        
+        <tr>
+            <th>you are here now!</th>
+        </tr>
+        <tr>
+            <td>{{ result[3] }}</td>
+        </tr>
+        <tr>
+            <th>There are also places like this around!</th>
+        </tr>
+        <tr>
+          <td>Address_1 | Address_2 | Store | Date of issue | Rating | Review </tD>
+      </tr>
+        <tr>
+            <td>남구 | 대학로94번길 | 가무댕댕 | 2021.10.13 | 3.5 | 추억의 가무댕댕 밥 양 좀 늘려주셨으면 좋겠어요. 서빙하는 남자분도 좀 불친절</td>
+        </tr>
+        <tr>
+            <td>남구 | 대학로94번길 | 가무댕댕 | 2021.10.09 | 4.0 | "물려서 다 못먹은 돈까스 ,, 예전에 비해 맛이 많이 달라졌다"</td>
+        </tr>
+        <tr>
+            <td>남구 | 대학로94번길 | 가무댕댕 | 2021.10.01 | 4.5 | 맛잇어요</td>
+        </tr>
+        <tr>
+            <td>남구 | 대학로94번길 | 가무댕댕 | 2021.09.29 | 5.0 | 맛있게 잘 먹었어요</td>
+        </tr>
+        <tr>
+            <td>남구 | 대학로94번길 | 가무댕댕 | 2021.09.25 | 5.0 | 맛있게 잘 먹었습니다~♡</td>
+        </tr>
+
+
+    </table>
+    </div>
+    <a href="{{ url_for('index') }}" class="btn btn-default">Back</a>
+      
+  </div> 
+
+{% endblock %}
