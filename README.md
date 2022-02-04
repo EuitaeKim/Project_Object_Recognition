@@ -32,37 +32,37 @@
 </br></br></br>
 ## File Directory
 
-- **data (데이터 파일은 개인정보 이슈가 있을 수 있어 업로드하지 않았음을 참고 부탁드립니다)** <br> 
+- **data (데이터 파일은 개인정보 이슈가 있을 수 있어 업로드하지 않음)** <br> 
     ㄴㅡ 1.train_labels_fold.csv <br>
-    ---> CV를 위해 이미지 별 라벨을 부여한 파일(1~5,무작위) <br>
+    ---> CV를 위해 이미지 별 라벨 부여(1~5,무작위) <br>
     
     ㄴㅡ 2.ulsan_landmark_add.csv <br>
-    ---> 울산 랜드마크의 이름,주소 데이터 파일 <br>
+    ---> 울산 랜드마크의 이름, 주소 데이터 <br>
     
     ㄴㅡ 3.ulsan_store_info.csv <br>
-    ---> 울산 음식점의 상호,주소 데이터 파일 <br>
+    ---> 울산 음식점의 상호, 주소 데이터 <br>
     
     ㄴㅡ 4.ulsan_store_info_add_url_pre-pro.csv <br>
-    ---> **data 3번** 파일에 리뷰 URL을 추가하고, 없는 음식점은 삭제한 파일 <br>
+    ---> **data 3번** 파일에 리뷰 URL 추가(없는 음식점은 삭제) <br>
     
     ㄴㅡ 5.ulsan_store_review_raw_pre-pro.csv <br>
-    ---> **data 4번** 파일의 URL로 수집한 평점,리뷰 원본 파일 <br>
+    ---> 리뷰 URL로 수집한 평점, 리뷰 데이터 <br>
     
     ㄴㅡ 6.ulsan_store_review_raw_pre-pro_address.csv <br>
-    ---> **data 5번** 파일에 음식점 주소지 추가한 파일 <br><br>
+    ---> **data 5번** 파일과 **data 3번**을 합한 최종 <br><br>
 
 - **review_crawling** <br>
     ㄴㅡ 1. ulsan_store_info_concat.ipynb <br>
-    ---> 울산 음식점의 상호,주소 데이터를 통합하는 파일(구 별로 나뉘어져있던 파일 통합) <br>
+    ---> 구 별로 나누어져있던 데이터 통합 <br>
     
     ㄴㅡ 2. web_crawling.py <br>
-    ---> **data 3번** 파일로 URL를 수집하고, 이를 활용해 리뷰,평점 데이터를 수집하는 파일 <br>
+    ---> **data 4번** 파일로 URL, 리뷰, 평점 데이터 수집 <br>
     
     ㄴㅡ 3. review_concat_add_Info.ipynb <br>
-    ---> **data 5번** 파일과 **data 3번** 파일을 통합하는 파일 <br>
+    ---> **data 5번** 파일과 **data 3번** 파일 통합 <br>
     
     ㄴㅡ 4. text_pre-pro.ipynb <br>
-    ---> **data 6번** 파일의 텍스트 전처리를 진행하는 파일 <br><br>
+    ---> **data 6번** 파일의 텍스트 전처리 진행 <br><br>
     
 - **model** <br>
     ㄴㅡ 1. Image_load_eda_resize.ipynb <br>
