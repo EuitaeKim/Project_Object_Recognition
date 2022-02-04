@@ -29,3 +29,58 @@
     3. 어플리케이션 구축 -> 완료
     4. 리뷰 분석 -> 대기
 6. [프로젝트 진행 과정 및 결과 상세](https://www.notion.so/92a0cd014125465696a634ea4bb973c4)
+
+
+## 데이터 선정
+![1](https://user-images.githubusercontent.com/66727848/152576338-c76c055b-dcd2-44b5-aafc-a1948f02407c.jpg)
+
+1, 2 : https://aihub.or.kr/aidata/8009
+3 : https://www.data.go.kr/index.do
+4 : https://pcmap.place.naver.com/restaurant/1858236719/review/visitor# (예시)
+
+## 프로젝트 로드맵
+![2](https://user-images.githubusercontent.com/66727848/152576543-a57d1ae2-dda2-41c0-8f15-61426e367130.jpg)
+
+
+## 객체인식 모델 구축 - Deep Learning
+
+- 최초 구현 방향 : ResNet101을 Pre-trained model로 활용하여 모델 구축 진행
+    
+    → But, **모델 성능이 비정상적으로 낮아지는 현상 발견**. 이를 해결하려 했으나 원인을 파악할 수 없었음
+    
+    → So, Pre-trained model을 활용하지 않고 아래와 같이 임의로 구축 후 학습 진행
+    
+![3](https://user-images.githubusercontent.com/66727848/152576738-a5fbde81-9874-4012-8621-2dac57807858.png)
+<img width="744" alt="4" src="https://user-images.githubusercontent.com/66727848/152577072-7fc94b6e-412b-4576-9aff-f759526fa3d7.png">
+
+<img width="823" alt="5" src="https://user-images.githubusercontent.com/66727848/152577094-7d983200-ea9d-4b6b-9e61-90b059e98c2f.png">
+
+![6](https://user-images.githubusercontent.com/66727848/152577124-33d12372-a768-4b19-94d9-d384886fa8e3.png)
+
+
+
+- 결과 해석 : 전체, Top3, Top5 Accuracy는 1에 가까운, Loss는 0에 가까운 수치까지 도달
+    - cf) Chance Level : Accuracy - 0.025
+    - 다만 **랜드마크의 촬영 구도가 완전히 달라지는 경우 성능이 하락하는 경향**을 보임
+        - ex : Train, Validation Data가 랜드마크의 좌, 우, 정면만 학습하고 Test 데이터를 후면 이미지로 입력하면 성능이 하락함
+        - Data Augmentation 만으로는 한계가 있기 때문에 이번 분석에서는 위의 사례에 해당하는 랜드마크는 제거 후 진행
+- 차후 진행 예정 사항 : **"이미지의 퀄리티가 충분히 좋다면, 굳이 딥러닝을 사용하지 않아도 좋은 성능을 낼 수 있다"는 가설 검증**
+
+## 4. 앱 애플리케이션 설계
+
+- 🔗[Github](https://github.com/EuitaeKim/Project_Object_Recognition)의 Presentation.mp4을 통해 구현 결과를 확인하실 수 있습니다.
+
+## 5. 이슈 및 회고
+
+→ 시간은 많았지만, 이전에 어려워했던 기능들을 구현하느라 목표했던 만큼 완성하지 못한 부분들이 있음
+
+1. Pre-trained Model 적용 간 원인을 파악하기 힘든 오류 발생
+2. 동적 크롤링을 위한 로직 설계 간 발생한 다양한 오류들
+3. CSV 파일을 HTML에 띄우는 과정에서의 어려움
+4. Flask를 통한 이미지 업로드 프로세스 설계에서의 어려움
+
+## 6. 차후 진행 방향
+
+1. 이전까지는 '구현'에 집중했다면, 이후에는 '분석'에 포커싱을 두고 프로젝트를 지속적으로 수정 및 보완
+2. Flask에서 임의로 값을 넣었던 항목을 수정하고 실제 배포까지 진행
+3. 이번 기획은 내국인보다 외국인을 대상으로 할 때 더 유용할 것으로 판단되기 때문에, 텍스트 번역 코드 및 알고리즘에 대해 서치 및 적용
