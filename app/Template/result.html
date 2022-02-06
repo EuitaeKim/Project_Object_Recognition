@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang = "en">
+  <head>
+    <meta charset = "utf-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1">
+
+    <link href = "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel = "stylesheet" integrity = "sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin = "anonymous">
+    <title>All About ULSAN</title>
+  </head>
+
+{% extends "base.html" %}
+
+{% block content %}
+<center><h1>you are here now!</h1></center>
+<div class="container"> 
+        <div>
+            <center><img src="{{ result[2] }}" class="img-rounded" width="600" height="300"><br><br></center>
+        </div>   
+<div>
+    <table class="table table-bordered table-striped" style="width:100%; height: auto;">
+        <tr>
+            <td style="width: 150px;">
+                Predicted Class
+            </td>
+            <td style="width: 150px;">
+                Predicted Prob
+            </td>
+            <td style="width: 150px;">
+                you are here now!
+            </td>
+        </tr>
+        <tr>
+            <td>
+                {{ result[0] }}
+            </td>
+            <td>
+                {{ result[1] * 100 }}%
+            </td>
+            <td>
+                {{ result[3] }}
+            </td>
+        </tr>
+    </table>
+    <hr>
+
+    <br><br><br>        
+    <center><h2>Would you like to see reviews of restaurants</h2></center>
+    <center><h2>located around this place?</h2></center>
+
+    </div>
+    <br>
+    <center><a href="{{ url_for('main.index') }}" class="btn btn-default">No. Probs are too low..</a></center>
+    <br>
+    <center><a href="{{ url_for('main.review') }}" class="btn btn-default">Yes !!!!!!!!!!</a></center>
+    </div> 
+
+{% endblock %}
+</html>
