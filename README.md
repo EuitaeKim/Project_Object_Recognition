@@ -5,11 +5,11 @@
 ## 여행 중 우연히 본 랜드마크의 이름과 정보를 알고 싶을 때 무엇을 검색해야 할까?
 
 우리에게 익숙한 키워드 검색은 ‘내가 궁금한 대상이 무엇인지 안다’고 가정합니다. 때문에 내가 궁금한 대상이 무엇인지 모를 경우 키워드 검색은 한계를 갖게 되며, 이를 보완하기 위한 이미지 검색이 새로운 패러다임으로 자리 잡고 있습니다. **때때로 이미지 검색은 키워드 검색보다 빠르게 정보를 획득할 수 있는 수단이 됩니다. 그리고 이는 내 서비스의 최종 목적지로 소비자를 더 빠르게 도착시킬 수 있다는 것을 의미합니다.**
-</br></br></br>
+</br></br>
 ## 본 프로젝트는 이미지 검색 기반의 어플리케이션을 구축하는 것을 목표로 합니다.
 
 최근 국내 여행 트렌드를 반영하여 ‘여행 중 우연히 본 랜드마크의 정보와 주변 시설의 정보를 알고 싶을 때’의 상황을 가정합니다. 그리고 최종 목적지를 주변 시설 정보 제공 페이지로 설정하여 **소비자에게는 필요한 정보를, 사업자 및 운영자에게는 수익 창출의 기회를 제공하는 것을 목표로 합니다.**
-</br></br></br>
+</br></br>
 ## 1. 프로젝트 요약 
 
 1. 주제 : 이미지 객체인식 기술을 활용한 랜드마크 탐지 및 관련 정보 제공 어플리케이션 구축 - 울산광역시를 중심으로
@@ -27,7 +27,8 @@
     1. 이미지 객체인식 모델 구축 -> 완료
     2. 주변 시설 정보 수집 파이프라인 구축 -> 완료
     3. 어플리케이션 구축 -> 완료
-</br></br></br>
+
+</br></br>
 ## 2. 데이터 선정
 ![1](https://user-images.githubusercontent.com/66727848/152576338-c76c055b-dcd2-44b5-aafc-a1948f02407c.jpg)
 
@@ -35,13 +36,17 @@
 2. 이미지 별 메타데이터: https://aihub.or.kr/aidata/8009
 3. 음식점 현황 데이터: https://www.data.go.kr/index.do
 4. 리뷰 데이터: https://pcmap.place.naver.com/restaurant/1858236719/review/visitor# (예시)
-</br></br></br>
+
+</br></br>
 ## 3. 프로젝트 로드맵
 ![2](https://user-images.githubusercontent.com/66727848/152576543-a57d1ae2-dda2-41c0-8f15-61426e367130.jpg)
-</br></br></br>
-## 4. 프로젝트 로드맵
+
+</br></br>
+## 4. 데이터 정규화 및 데이터베이스 저장
 <img width="1100" alt="2" src="https://user-images.githubusercontent.com/66727848/152676959-7166fe81-72a4-438b-a3c2-33ed013b393b.png">
-</br></br></br>
+수집한 데이터를 주제별 테이블 단위로 정리하고 이를 PK, FK 관계로 연결하여 SQLite 데이터베이스에 저장
+
+</br></br>
 ## 5. 객체인식 모델 구축 - Deep Learning
 <img width="1149" alt="1" src="https://user-images.githubusercontent.com/66727848/152676664-899b1ab5-ac43-4fde-92c1-ea334bff9cf3.png">
 
@@ -52,9 +57,10 @@
 cf) Chance Level : Accuracy - 0.024
 
 4. **랜드마크의 촬영 구도가 완전히 달라지는 경우 성능이 하락하는 경향**을 보임
-    - ex: Train, Validation Data가 랜드마크의 좌, 우, 정면만 학습하고 Test 데이터를 후면 이미지로 입력하면 성능이 하락함
+    - ex: Train, Validation Data가 랜드마크의 좌, 우, 정면만 학습하고 Test 데이터를 후면 이미지로 입력하면 성능이 하락
     - Data Augmentation만으로는 한계가 있기 때문에 이번에는 위의 사례에 해당하는 랜드마크는 제거 후 진행
-</br></br></br>
+
+</br></br>
 ## 6. 앱 애플리케이션 설계
 
 - 🔗[Github](https://github.com/EuitaeKim/Project_Object_Recognition)의 Presentation.mp4을 통해 구현 결과를 확인하실 수 있습니다.
